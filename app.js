@@ -122,5 +122,20 @@ btn.addEventListener("click", (evt)=>{
 window.addEventListener("load",()=>{
     updateExchangeRate();
 });
+// Swap currencies when the icon is clicked
+swapIcon.addEventListener("click", () => {
+    // Swap selected values between "from" and "to" select elements
+    let temp = fromCurr.value;
+    fromCurr.value = toCurr.value;
+    toCurr.value = temp;
+  
+    // Update flags for both currencies
+    updateFlag(fromCurr);
+    updateFlag(toCurr);
+  
+    // Recalculate exchange rate after swap
+    updateExchangeRate();
+  });
+
 
 
