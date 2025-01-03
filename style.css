@@ -84,7 +84,3 @@ form button{
 #swapIcon.inactive {
   color: red; /* Color when inactive (first click) */
 }
-
-#swapIcon.active {
-    color: green; /* Color when active (second click) */
-  }
