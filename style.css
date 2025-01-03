@@ -72,3 +72,19 @@ form button{
     font-size: 1.15rem;
     cursor: pointer;
 }
+#swapIcon {
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+#swapIcon.active {
+  color: green; /* Color when active (second click) */
+}
+
+#swapIcon.inactive {
+  color: red; /* Color when inactive (first click) */
+}
+
+#swapIcon.active {
+    color: green; /* Color when active (second click) */
+  }
