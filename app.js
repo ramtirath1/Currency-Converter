@@ -19,14 +19,15 @@ for(let select of dropdowns){
         // to add option one by one
         let newOption=document.createElement("option");
         // when option disble from html and if we want to auto select then
+          newOption.innerText=currCode;
+          newOption.value=currCode;
         if(select.name==="from" && currCode==="USD"){
             newOption.selected="selected";
         }
         else if(select.name==="to" && currCode==="INR"){
             newOption.selected="selected";
         }
-        newOption.innerText=currCode;
-        newOption.value=currCode;
+      
         // newOption add in select
         select.append(newOption);
     }
