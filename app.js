@@ -113,7 +113,7 @@ updateExchangeRate=async()=>{
 // our default is usd to inr conversion so that we want to display that
 // on start
 // when click then update exchnage rate
-btn.addEventListener("click", async(evt)=>{
+btn.addEventListener("click", (evt)=>{
     evt.preventDefault();
     evt.updateExchangeRate();
 });
