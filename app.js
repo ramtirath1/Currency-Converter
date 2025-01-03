@@ -116,7 +116,7 @@ updateExchangeRate=async()=>{
 // when click then update exchnage rate
 btn.addEventListener("click", (evt)=>{
     evt.preventDefault();
-    evt.updateExchangeRate();
+    updateExchangeRate();
 });
 // when first time our document load 
 window.addEventListener("load",()=>{
