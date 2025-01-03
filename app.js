@@ -63,39 +63,39 @@ const updateFlag=(element)=>{
 //  button, prevent it from submitting a form. Clicking on a link, 
 // prevent the link from following the URL.
 
-btn.addEventListener("click", async(evt)=>{
-    evt.preventDefault();
-    // to access amount whatever we enter here
-    let amount=document.querySelector(".amount input");
-     let amtVal=amount.value;
-    //  console.log(amtVal);to see value in console what we enter 
-     if(amtVal===""||amtVal<1){
-        amtVal=1;
-        amount.value="1";
-     };
+// btn.addEventListener("click", async(evt)=>{
+//     evt.preventDefault();
+//     // to access amount whatever we enter here
+//     let amount=document.querySelector(".amount input");
+//      let amtVal=amount.value;
+//     //  console.log(amtVal);to see value in console what we enter 
+//      if(amtVal===""||amtVal<1){
+//         amtVal=1;
+//         amount.value="1";
+//      };
 
-    //  console.log(fromCurr,toCurr); //  we need value so
-    // console.log(fromCurr.value,toCurr.value);
-    // const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
-    //  when we send request to this URL then get our exchange rate
-    // let response=await fetch(URL);// to use await function must be async
-    // console.log(response);
-    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
-  let response = await fetch(URL);
-    //   console.log(response);// get reponse 200 means all work well
-      let data = await response.json();
-      console.log(data);// to see data on console
-    //   rate available on tocurrency
-    //   let rate = data[toCurr.value.toLowerCase()];
-    //   console.log(rate);    
-    //   let finalAmount=amtVal*rate;
-      let finalAmount = (data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()]*parseInt(amount.value)).toFixed(2);
-      console.log(finalAmount);
+//     //  console.log(fromCurr,toCurr); //  we need value so
+//     // console.log(fromCurr.value,toCurr.value);
+//     // const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+//     //  when we send request to this URL then get our exchange rate
+//     // let response=await fetch(URL);// to use await function must be async
+//     // console.log(response);
+//     const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
+//   let response = await fetch(URL);
+//     //   console.log(response);// get reponse 200 means all work well
+//       let data = await response.json();
+//       console.log(data);// to see data on console
+//     //   rate available on tocurrency
+//     //   let rate = data[toCurr.value.toLowerCase()];
+//     //   console.log(rate);    
+//     //   let finalAmount=amtVal*rate;
+//       let finalAmount = (data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()]*parseInt(amount.value)).toFixed(2);
+//       console.log(finalAmount);
 
-    //   console.log(finalAmount);
-    // msg.innerText=`1USD=80INR`; // message like this    
-    msg.innerText=`${amtVal} ${fromCurr.value}=${finalAmount} ${toCurr.value}`;
-});
+//     //   console.log(finalAmount);
+//     // msg.innerText=`1USD=80INR`; // message like this    
+//     msg.innerText=`${amtVal} ${fromCurr.value}=${finalAmount} ${toCurr.value}`;
+// });
 updateExchangeRate=async()=>{
     let amount=document.querySelector(".amount input");
     let amtVal=amount.value;
