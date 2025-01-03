@@ -121,6 +121,7 @@ btn.addEventListener("click", (evt)=>{
 // when first time our document load 
 window.addEventListener("load",()=>{
     updateExchangeRate();
+        setInitialSwapIconState(); // Set the initial state of the swap icon
 });
 // Swap currencies when the icon is clicked
 swapIcon.addEventListener("click", () => {
@@ -135,7 +136,25 @@ swapIcon.addEventListener("click", () => {
   
     // Recalculate exchange rate after swap
     updateExchangeRate();
+        // Toggle icon color
+//   swapIcon.classList.toggle("active");  // Toggle active color (green)
+//   swapIcon.classList.toggle("inactive");  // Toggle inactive color (red)
+    // Toggle icon color between red and green
+    if (swapIcon.classList.contains("active")) {
+        swapIcon.classList.remove("active");
+        swapIcon.classList.add("inactive"); // Set color to red if it's active
+      } else {
+        swapIcon.classList.remove("inactive");
+        swapIcon.classList.add("active"); // Set color to green if it's inactive
+      }
   });
+  // Set the initial color of the swap icon (when page loads)
+const setInitialSwapIconState = () => {
+    // Add the 'inactive' class initially so the icon starts with red color
+    if (!swapIcon.classList.contains("active")) {
+      swapIcon.classList.add("inactive");
+    }
+  };
 
 
 
